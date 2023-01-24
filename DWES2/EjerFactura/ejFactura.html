@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Factura</title>
+    <style>
+        div{
+            margin: 0 auto;
+            border: grey 2px solid;
+            height: 600px;
+            width: 900px;
+        }
+    </style>
+    <script src="factura.js"></script>
+</head>
+<body>
+    <div id="contenedor">
+
+    </div>
+    <script>
+        let miEmpresa = new Empresa("App", "Calle Xativa, 1", "961112233", "001000");
+        let miCliente = new Cliente("pepe", "calle valencia, 23", "666333222", "123456789Z");
+        let misElementos = [new Elemento("Portatil", 4, 600), new Elemento("teclado", 2, 35), new Elemento("monitor", 5, 95)];
+        let miFactura = new Factura(miEmpresa, miCliente, misElementos, "21", "Tarjeta");
+        
+        
+        miFactura.muestraFactura();
+        miFactura.calculaBaseImponible();
+        miFactura.calculaTotal();
+        
+        
+        console.log("Base Imponible: " + miFactura.baseImponible);
+        console.log("IVA: " + miFactura.iva);
+        console.log("Total: " + miFactura.total);
+    </script>
+</body>
+</html>

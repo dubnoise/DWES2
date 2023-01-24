@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+    <h2>JavaScript Objects</h2>
+    <p id="demo1"></p>
+
+    <hr>
+
+    <!-- DEMO2 -->
+    <button onclick="document.getElementById('demo2').innerHTML=Date()">The time is?</button>
+    <p id="demo2"></p>
+
+    <hr>
+
+    <h2>JavaScript Class Method</h2>
+    <p id="demo3"></p>
+
+    <hr>
+
+    <h2>JavaScript Arrays</h2>
+    <p id="demo4"></p>
+
+    <script>
+    //DEMO1
+    // Create an object:
+    const person = {
+    firstName: "David",
+    lastName: "Morillas",
+    id: 5566,
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+    };
+
+    // Display data from the object:
+    document.getElementById("demo1").innerHTML = person.fullName();
+
+    //DEMO3
+    class Car {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+
+        }
+        age() {
+            let date = new Date();
+            return date.getFullYear() - this.year;
+        }
+    }
+
+    let myCar = new Car("Ford", 2014);
+    document.getElementById("demo3").innerHTML =
+    "My car is " + myCar.age() + " years old.";
+
+    //DEMO4
+    const cars = new Array("Saab", "Volvo", "BMW");
+    document.getElementById("demo4").innerHTML = cars;
+</script>
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        form{
+            border: 1px solid black;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+        }
+        div{
+            margin: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="temporal">
+        <h3>Empleado Temporal</h3>
+        <form action="" method="post" name="temporal">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            <label for="fechaNacimiento">Fecha Nacimiento</label>
+            <input type="date" name="fechaNacimiento">
+            <label for="nif">NIF</label>
+            <input type="text" name="nif">
+            <label for="fechaAlta">Fecha Alta</label>
+            <input type="date" name="fechaAlta">
+            <label for="fechaBaja">Fecha Baja</label>
+            <input type="date" name="fechaBaja">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="horas">
+        <h3>Empleado por Horas</h3>
+        <form action="" method="post" name="horas">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            <label for="fechaNacimiento">Fecha Nacimiento</label>
+            <input type="date" name="fechaNacimiento">
+            <label for="nif">NIF</label>
+            <input type="text" name="nif">
+            <label for="precioHora">Precio Hora</label>
+            <input type="text" name="precioHora">
+            <label for="numeroHoras">Numero Horas</label>
+            <input type="text" name="numeroHoras">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div class="fijo">
+        <h3>Empleado Fijo</h3>
+        <form action="" method="post" name="fijo">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            <label for="fechaNacimiento">Fecha Nacimiento</label>
+            <input type="date" name="fechaNacimiento">
+            <label for="nif">NIF</label>
+            <input type="text" name="nif">
+            <label for="informacion">Informacion</label>
+            <input type="text" name="informacion">
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <section id="nuevoEmpleado">
+
+    </section>
+   
+    <script src="empleados.js"></script>
+    
+</body>
+</html>

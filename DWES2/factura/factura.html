@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <style>
+        *{
+            text-align: center;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+       
+        .form{
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 20vw;
+        }
+    </style>
+    <script src="factura.js"></script>
+</head>
+<body>
+    <form action="#" method="post" class="form" name="form_empresa">
+        <h3>EMPRESA</h3>
+        <label for="nombreEmpresa">Nombre de la empresa</label>
+        <input type="text" name="nombreEmpresa" id="nombreEmpresa">
+        <label for="direccionEmpresa">Dirección de la empresa</label>
+        <input type="text" name="direccionEmpresa">
+        <label for="telefonoEmpresa">Teléfono de la empresa</label>
+        <input type="number" name="telefonoEmpresa">
+        <label for="nifEmpresa">NIF de la empresa</label>
+        <input type="text" name="nifEmpresa">
+        <input type="submit" value="Crear">
+    </form>
+
+    <form action="#" method="post" class="form" name="form_cliente">
+        <h3>CLIENTE</h3>
+        <label for="nombreCliente">Nombre del cliente</label>
+        <input type="text" name="nombreCliente">
+        <label for="direccionCliente">Dirección del cliente</label>
+        <input type="text" name="direccionCliente">
+        <label for="telefonoCliente">Teléfono del cliente</label>
+        <input type="number" name="telefonoCliente">
+        <label for="nifCliente">NIF del cliente</label>
+        <input type="text" name="nifCliente">
+        <input type="submit" value="Crear">
+    </form>
+
+    <form action="#" method="post" class="form" name="form_elementos">
+        <h3>LISTA DE ELEMENTOS</h3>
+        <label for="descripcion">Descripción</label>
+        <input type="text" name="descripcion">
+        <label for="precio">Precio</label>
+        <input type="number" name="precio">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" name="cantidad">
+        <input type="submit" value="Crear">
+    </form>
+
+    <form action="#" method="post" class="form" name="form_factura">
+        <h3>FACTURA</h3>
+        <label for="iva">IVA</label>
+        <input type="number" name="iva">
+        <label for="formaPago">Forma de pago</label>
+        <input type="text" name="formaPago">
+        <input type="submit" value="Crear">
+    </form>
+    
+    <script>
+        let nombreEmpresa = document.getElementById('nombreEmpresa').value;
+        console.log('EMPRESA:'+nombreEmpresa);
+
+        let Empresa1 = new Empresa('Nombre empresa', 'Direccion empresa', '666666666', 'NIF empresa');
+        let Cliente1 = new Cliente('Nombre cliente', 'Direccion cliente', '656656656', 'NIF cliente');
+        let Elemento1 = [new Elemento("Bicicleta", 600, 4), new Elemento("Manillar", 35, 2), new Elemento("Neumático", 95, 10)];
+        let Factura1 = new Factura(Empresa1, Cliente1, Elemento1, '21', 'Efectivo');
+
+        Factura1.muestraFactura();
+        Factura1.calculaBaseImponible();
+        Factura1.calculaTotal();
+        
+        
+        console.log("Base Imponible: " + Factura1.baseImponible);
+        console.log("IVA: " + Factura1.tipoIva);
+        console.log("Total: " + Factura1.total);
+    </script>
+
+    
+</body>
+</html>
